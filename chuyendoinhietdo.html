@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi nhiệt độ</title>
+</head>
+<body>
+    <b>Temperature Converter</b><br>
+    <p> Type a value </p><br>
+    <input type="text" spaceholder="Nhập nhiệt độ" id="input" oninput="chuyendoinhietdo(this.value)"/>
+    <p>Nhiệt độ sau khi đổi là:<span id="result"></span></p>
+    
+
+    <script>
+        function chuyendoinhietdo(input){
+        Nhietdo = parseInt(input);
+        document.getElementById("result").innerHTML = (Nhietdo-32) / 1.8;
+        }
+    </script>
+    
+</body>
+</html>

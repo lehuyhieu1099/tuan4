@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi meters - feet</title>
+</head>
+
+<body>
+    <table border="0" cellspacing="5px">
+        <tr>
+            <td align="center">Giá trị </td>
+            <td align="center">Từ</td>
+            <td align="center">Thành</td>
+        </tr><br>
+        <tr>
+            <td>
+                <input id="giatri" type="text" size="20" placeholder="Nhập giá trị" oninput="chuyendoi(this)">
+            </td>
+            <td align="center">
+                <select id="donvi1" value="        ">
+                    <option value="meters">Meters</option>
+                    <option value="feet">Feet</option>
+                </select>
+            </td>
+            <td align="center">
+                <select id="donvi2"  value="             ">
+                    <option value="feet">Feet</option>
+                    <option value="meters">Meters</option>
+                </select>
+            </td>
+            <td align="center">
+                <!-- <button onclick="chuyendoi()">Chuyển đổi</button> -->
+            </td>
+        </tr>
+        <tr>
+            <td>Result
+                <input id="result" type="number" onlyread />
+            </td>
+
+        </tr>
+    </table>
+
+
+    <script>
+
+        function chuyendoi() {
+            let giatri = document.getElementById('giatri').value;
+            if ((document.getElementById('donvi1').value == 'meters') && 
+            (document.getElementById('donvi2').value == 'feet')) {
+            let ketqua = giatri * 3.279 ;
+                document.getElementById('result').value = ketqua;
+
+            }
+            else
+                if ((document.getElementById('donvi1').value == 'feet') &&
+                 (document.getElementById('donvi2').value == 'meters')) {
+                   ketqua =  0.305 * giatri;
+                    document.getElementById('result').value = ketqua;
+                }
+        }
+
+    </script>
+
+</body>
+
+</html>
