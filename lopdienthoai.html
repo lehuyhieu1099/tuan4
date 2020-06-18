@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Mobile = function (baterry) {
+            if (baterry < 100 && baterry >= 0) {
+                this.baterry = baterry;
+            }
+
+            this.soanThao = [];
+            this.thuDen = [];
+            this.daGui = [];
+            this.status = false;
+            this.changeStatus = function () {
+                this.status = !this.status;
+            }
+            this.sacPin = function () {
+                this.baterry = baterry++;
+                let self = this;
+                console.log(this.baterry);
+                if (this.baterry < 100) {
+
+                    setTimeout(function () {
+                        self.sacPin();
+                    }, 2000)
+                }
+            }
+
+            this.soanThaoTn = function (str) {
+                if (this.status) {
+                    this.soanThao.push(str);
+                    this.baterry--;
+                }
+
+            }
+            this.nhanTinNhan = function (str) {
+                if (this.status) {
+                    this.thuDen.push(str);
+                    this.baterry--;
+                }
+            }
+            this.guiTinNhan = function (mobile, str) {
+                if (this.status) {
+                    this.daGui.push(str);
+                    mobile.thuDen.push(str);
+                    this.baterry--;
+                }
+            }
+            this.xemHTD = function () {
+                console.log(this.thuDen)
+            }
+            this.xemTDG = function () {
+                console.log(this.daGui)
+            }
+        }
+        let nokia = new Mobile(90);
+
+        let iPhone = new Mobile(80);
+        nokia.changeStatus();
+
+
+        document.write(nokia.status)
+        nokia.guiTinNhan(iPhone, 'Hello Hieu');
+        console.log(iPhone.thuDen);
+    </script>
+</body>
+
+</html>

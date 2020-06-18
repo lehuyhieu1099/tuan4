@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lớp hình chữ nhật</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="700" height="500" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        let Rectangle = function (dai, rong) {
+            this.dai = dai;
+            this.rong = rong;
+            this.area = function () {
+                return dai * rong;;
+            }
+            this.chuvi = function () {
+                return (dai + rong) * 2
+            }
+            this.creatHCN = function () {
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.moveTo(0, 0);
+                ctx.lineTo(dai, 0);
+                ctx.lineTo(dai, rong);
+                ctx.lineTo(0, rong);
+                ctx.lineTo(0, 0);
+                ctx.stroke();
+            }
+
+        }
+        let HCN = new Rectangle(300, 200);
+        HCN.creatHCN();
+    </script>
+</body>
+
+</html>

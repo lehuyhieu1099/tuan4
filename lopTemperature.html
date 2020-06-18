@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Temperature = function (doC) {
+            if (doC >= -273) {
+                this.doC = doC;
+            }
+            this.doF = function () {
+                return 9 * doC / 5 + 32
+            }
+            this.doKenvil = function () {
+                return doC + 273.15
+            }
+
+        }
+        let temperature = new Temperature(25);
+        let doF = temperature.doF()
+        let K = temperature.doKenvil()
+        document.write(`  độ F: ${doF} <br> độ K: ${K}`)
+    </script>
+</body>
+
+</html>
