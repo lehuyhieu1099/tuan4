@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng lớp Date</title>
+</head>
+
+<body>
+    <script>
+        let MyDate = function (day, month, year) {
+
+            // Truyền 3 tham số cho class
+            this.day = day;
+
+            this.month = month;
+
+            this.year = year;
+            // Phương thức trả về ngày tháng năm
+            this.getDay = function () {
+                return this.day;
+            }
+            this.getMonth = function () {
+                return this.month;
+            }
+            this.getYear = function () {
+                return this.year;
+            }
+            // Phương thức thiết lập giá trị các thuộc tính của Date
+            this.setDay = function (day) {
+                this.day = day;
+            }
+            this.setMonth = function (month) {
+                this.month = month;
+            }
+            this.setYear = function (year) {
+                this.year = year;
+            }
+            // Phương thức thiết lập lại Date 
+            this.setDate = function (Date) {
+                this.day = ' ';
+                this.month = ' ';
+                this.year = ' ';
+            }
+            // Phương thức trả về chuỗi ngày tháng năm
+            this.toString = function (Date) {
+                return `${day}/${month}/${year}`
+            }
+
+        };
+        // Khởi tạo đối tượng date
+        let date = new MyDate(10, 9, 1999);
+        // let day = date.getDay();
+        // let month = date.getMonth();
+        // let year = date.getYear();
+        // alert(`Ngày ${day} tháng ${month} năm ${year}`)
+
+        // Sử dụng lớp 
+        // date.setDay(10);
+        // date.setMonth(10);
+        // date.setYear(2019);
+        // let day = date.getDay();
+        // let month = date.getMonth();
+        // let year = date.getYear();
+        // alert(day + "/" + month + "/" + year);
+
+        // Đặt lại Date
+        // date.setDate()
+        // let day = date.getDay();
+        // let month = date.getMonth();
+        // let year = date.getYear();
+        // alert(`Ngày ${day} tháng ${month} năm ${year}`)
+
+        // Trả về chuỗi ngày tháng năm
+        let day = date.getDay();
+        let month = date.getMonth();
+        let year = date.getYear();
+        document.write(date.toString())
+
+
+
+
+    </script>
+</body>
+
+</html>
